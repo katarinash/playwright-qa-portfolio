@@ -1,8 +1,7 @@
 import { Locator, Page } from "@playwright/test";
-import { UniversalPage } from "./universal-page";
+import { BasePage } from "./base-page";
 
-export class HomePage extends UniversalPage {
-
+export class HomePage extends BasePage {
   constructor(page: Page) {
     super(page, "/");
   }

@@ -20,5 +20,10 @@ export class UniversalPage {
 
   async open() {
     await this.page.goto(this.pageUrl);
+    await expect(this.page).toHaveURL(this.pageUrl);
+  }
+
+  async checkCurrentPage() {
+    await expect(this.page).toHaveURL(new RegExp(this.pageUrl));
   }
 }
