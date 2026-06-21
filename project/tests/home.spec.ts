@@ -22,4 +22,8 @@ test("t_03_check_community_button", async ({ homePage, communityPage }) => {
     await homePage.communityButton.click();
     await communityPage.checkCurrentPage();
 });
+
+test("t_04_check_news_section_structure", async ({ homePage }) => {
+    await homePage.newsSection.verifyNewsStructure(8);
+});
 })
