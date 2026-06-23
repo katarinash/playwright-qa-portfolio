@@ -1,11 +1,13 @@
 import { expect, Locator, Page } from "@playwright/test";
+import { BaseSection } from "./base-section";
 
-export class NewsSection {
-    readonly newsSection: Locator;
+export class NewsSection extends BaseSection{
     readonly newsItem: Locator;
 
-    constructor(private page: Page) {
-        this.newsSection = page.locator(".news-listInner");
+    constructor(page: Page) {
+        const root = page.locator(".news-listWrap.section")
+        super(root)
+
         this.newsItem = page.locator(".news-list__item.tu-slider__item");
     }
 
